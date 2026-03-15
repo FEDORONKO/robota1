@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Розклад прийому лікарів медичного кабінету Здоров'я, Івано-Франківськ. Години роботи спеціалістів.">
+  <title>Розклад прийому — Медичний кабінет «Здоров'я»</title>
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/components.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container">
+      <div class="header-inner">
+        <a href="index.html" class="logo" aria-label="Медичний кабінет Здоров'я — на головну">
+          <div class="logo-icon" aria-hidden="true">🏥</div>
+          <div class="logo-text">
+            <span class="logo-name">Медкабінет «Здоров'я»</span>
+            <span class="logo-tagline">Івано-Франківськ</span>
+          </div>
+        </a>
+        <button class="nav-toggle" aria-label="Відкрити меню" aria-expanded="false" aria-controls="main-nav">
+          <span></span><span></span><span></span>
+        </button>
+        <nav class="main-nav" id="main-nav" aria-label="Головне меню">
+          <a href="index.html">Головна</a>
+          <a href="patients.html">Пацієнти</a>
+          <a href="doctors.html">Лікарі</a>
+          <a href="schedule.html" aria-current="page">Розклад</a>
+          <a href="appointment.html" class="nav-cta">Записатись</a>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="section" aria-labelledby="page-title">
+      <div class="container">
+
+        <header style="margin-bottom:var(--spacing-xl)">
+          <h1 id="page-title">Розклад прийому</h1>
+          <p style="color:var(--color-text-muted)">Актуальний розклад роботи спеціалістів на поточний тиждень</p>
+          <div class="divider" aria-hidden="true"></div>
+        </header>
+
+        <div style="overflow-x:auto">
+          <table class="schedule-table" aria-label="Розклад прийому лікарів">
+            <thead>
+              <tr>
+                <th scope="col">Лікар / Спеціальність</th>
+                <th scope="col">Понеділок</th>
+                <th scope="col">Вівторок</th>
+                <th scope="col">Середа</th>
+                <th scope="col">Четвер</th>
+                <th scope="col">П'ятниця</th>
+                <th scope="col">Субота</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Петренко М.В.</strong><br><small>Терапевт, каб. 3</small></td>
+                <td class="available">08:00–13:00</td>
+                <td>—</td>
+                <td class="available">08:00–13:00</td>
+                <td>—</td>
+                <td class="available">08:00–13:00</td>
+                <td class="available">09:00–12:00</td>
+              </tr>
+              <tr>
+                <td><strong>Іваненко О.П.</strong><br><small>Кардіолог, каб. 5</small></td>
+                <td>—</td>
+                <td class="available">10:00–16:00</td>
+                <td>—</td>
+                <td class="available">10:00–16:00</td>
+                <td class="available">10:00–14:00</td>
+                <td>—</td>
+              </tr>
+              <tr>
+                <td><strong>Коваленко І.М.</strong><br><small>Невролог, каб. 7</small></td>
+                <td class="available">13:00–18:00</td>
+                <td class="available">13:00–18:00</td>
+                <td>—</td>
+                <td class="available">13:00–18:00</td>
+                <td>—</td>
+                <td>—</td>
+              </tr>
+              <tr>
+                <td><strong>Бондаренко В.С.</strong><br><small>Хірург, каб. 2</small></td>
+                <td class="available">08:00–14:00</td>
+                <td>—</td>
+                <td class="available">08:00–14:00</td>
+                <td>—</td>
+                <td class="available">08:00–14:00</td>
+                <td>—</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <aside style="margin-top:var(--spacing-xl)" aria-label="Інформація про режим роботи">
+          <div class="cards-grid" style="grid-template-columns:repeat(auto-fill,minmax(220px,1fr))">
+            <div class="card">
+              <div class="card-body">
+                <h3 class="card-title">⚠️ Увага</h3>
+                <p class="card-text">Розклад може змінюватися. Уточнюйте за телефоном за день до прийому.</p>
+              </div>
+            </div>
+            <div class="card">
+              <div class="card-body">
+                <h3 class="card-title">📞 Запис</h3>
+                <p class="card-text">+38 (0342) 12-34-56<br>або онлайн на сайті</p>
+              </div>
+            </div>
+            <div class="card">
+              <div class="card-body">
+                <h3 class="card-title">🏥 Адреса</h3>
+                <p class="card-text">м. Івано-Франківськ,<br>вул. Медична, 12</p>
+              </div>
+            </div>
+          </div>
+        </aside>
+
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="logo">
+            <div class="logo-icon" aria-hidden="true">🏥</div>
+            <div class="logo-text">
+              <span class="logo-name">Медкабінет «Здоров'я»</span>
+              <span class="logo-tagline">Піклуємось про вас з 2012 року</span>
+            </div>
+          </a>
+        </div>
+        <nav aria-label="Навігація у підвалі">
+          <h3 class="footer-heading">Навігація</h3>
+          <ul class="footer-links">
+            <li><a href="index.html">Головна</a></li>
+            <li><a href="patients.html">Пацієнти</a></li>
+            <li><a href="doctors.html">Лікарі</a></li>
+            <li><a href="appointment.html">Записатись</a></li>
+          </ul>
+        </nav>
+        <address aria-label="Контактна інформація">
+          <h3 class="footer-heading">Контакти</h3>
+          <div class="footer-contact-item">
+            <span class="icon" aria-hidden="true">📞</span>
+            <a href="tel:+380342123456" style="color:rgba(255,255,255,0.7)">+38 (0342) 12-34-56</a>
+          </div>
+          <div class="footer-contact-item">
+            <span class="icon" aria-hidden="true">🕐</span>
+            <span>Пн–Пт: 08:00–18:00, Сб: 09:00–14:00</span>
+          </div>
+        </address>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2024 Медичний кабінет «Здоров'я». Усі права захищені.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

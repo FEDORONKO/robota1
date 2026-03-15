@@ -1,0 +1,188 @@
+/* ===================================================
+   forms.css — Стилі форм з HTML5-валідацією
+   :valid, :invalid, :focus — практична робота №1
+   =================================================== */
+
+/* ========= Обгортка форми ========= */
+.form-section {
+  background: var(--color-bg-alt);
+  border-radius: var(--border-radius-xl);
+  padding: var(--spacing-xl);
+  box-shadow: var(--shadow);
+  max-width: 640px;
+  margin: 0 auto;
+}
+.form-section h2 {
+  margin-bottom: var(--spacing-xs);
+}
+.form-section .form-lead {
+  color: var(--color-text-muted);
+  margin-bottom: var(--spacing-lg);
+}
+
+/* ========= Група поля ========= */
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: var(--spacing-md);
+}
+
+/* ========= Label ========= */
+.form-group label {
+  font-size: var(--font-size-sm);
+  font-weight: 600;
+  color: var(--color-text);
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+.form-group label .required-mark {
+  color: var(--color-error);
+  font-size: 0.9em;
+}
+
+/* ========= Поля вводу ========= */
+.form-group input,
+.form-group select,
+.form-group textarea {
+  padding: 11px var(--spacing-md);
+  border: 2px solid #d1d5db;
+  border-radius: var(--border-radius);
+  font-family: var(--font-main);
+  font-size: var(--font-size-md);
+  color: var(--color-text);
+  background: var(--color-bg);
+  transition: border-color var(--transition), box-shadow var(--transition), background var(--transition);
+  width: 100%;
+}
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+.form-group select {
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%235a7a76' stroke-width='2'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 14px center;
+  padding-right: 40px;
+}
+
+/* ========= Стан фокусу (a11y) ========= */
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px rgba(13, 148, 136, 0.18);
+  background: var(--color-bg-alt);
+}
+
+/* ========= Валідне поле ========= */
+.form-group input:not(:placeholder-shown):valid,
+.form-group textarea:not(:placeholder-shown):valid {
+  border-color: var(--color-success);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='18' height='18' viewBox='0 0 24 24' fill='none' stroke='%2322c55e' stroke-width='2.5'%3E%3Cpath d='M20 6L9 17l-5-5'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 14px center;
+  padding-right: 42px;
+}
+
+/* ========= Невалідне поле (лише після взаємодії) ========= */
+.form-group input:not(:placeholder-shown):invalid,
+.form-group textarea:not(:placeholder-shown):invalid {
+  border-color: var(--color-error);
+  box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.15);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='18' height='18' viewBox='0 0 24 24' fill='none' stroke='%23ef4444' stroke-width='2.5'%3E%3Ccircle cx='12' cy='12' r='10'/%3E%3Cline x1='15' y1='9' x2='9' y2='15'/%3E%3Cline x1='9' y1='9' x2='15' y2='15'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 14px center;
+  padding-right: 42px;
+}
+
+/* ========= Повідомлення про помилку ========= */
+.form-hint {
+  font-size: var(--font-size-xs);
+  color: var(--color-text-muted);
+  margin-top: 2px;
+}
+
+.form-error {
+  font-size: var(--font-size-xs);
+  color: var(--color-error);
+  display: none;
+  align-items: center;
+  gap: 4px;
+  margin-top: 2px;
+}
+.form-group input:not(:placeholder-shown):invalid ~ .form-error,
+.form-group textarea:not(:placeholder-shown):invalid ~ .form-error {
+  display: flex;
+}
+.form-group input:not(:placeholder-shown):valid ~ .form-error,
+.form-group textarea:not(:placeholder-shown):valid ~ .form-error {
+  display: none;
+}
+
+/* ========= Чекбокс ========= */
+.form-group--checkbox {
+  flex-direction: row;
+  align-items: flex-start;
+  gap: var(--spacing-sm);
+}
+.form-group--checkbox input[type="checkbox"] {
+  width: 20px;
+  height: 20px;
+  min-width: 20px;
+  accent-color: var(--color-primary);
+  cursor: pointer;
+  margin-top: 2px;
+}
+.form-group--checkbox label {
+  font-weight: 400;
+  cursor: pointer;
+}
+
+/* ========= Дві колонки ========= */
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--spacing-md);
+}
+
+@media (max-width: 480px) {
+  .form-row { grid-template-columns: 1fr; }
+  .form-section { padding: var(--spacing-lg); }
+}
+
+/* ========= Tabs (перемикач форм) ========= */
+.form-tabs {
+  display: flex;
+  gap: var(--spacing-xs);
+  background: var(--color-bg);
+  padding: 6px;
+  border-radius: var(--border-radius-lg);
+  margin-bottom: var(--spacing-lg);
+}
+.form-tab {
+  flex: 1;
+  padding: 10px var(--spacing-md);
+  border: none;
+  background: none;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  font-family: var(--font-main);
+  font-size: var(--font-size-sm);
+  font-weight: 500;
+  color: var(--color-text-muted);
+  transition: background var(--transition), color var(--transition);
+}
+.form-tab.active {
+  background: var(--color-bg-alt);
+  color: var(--color-primary);
+  box-shadow: var(--shadow-sm);
+  font-weight: 600;
+}
+.form-panel { display: none; }
+.form-panel.active { display: block; }

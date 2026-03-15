@@ -1,0 +1,206 @@
+/* ===================================================
+   base.css — Базові стилі, типографіка, layout
+   =================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&family=Playfair+Display:wght@600;700&display=swap');
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: var(--font-size-md);
+}
+
+body {
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-main);
+  font-size: var(--font-size-md);
+  line-height: 1.65;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* === Типографіка === */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display);
+  line-height: 1.2;
+  color: var(--color-secondary);
+}
+
+h1 { font-size: var(--font-size-2xl); }
+h2 { font-size: 2rem; margin-bottom: var(--spacing-md); }
+h3 { font-size: 1.3rem; margin-bottom: var(--spacing-sm); }
+
+p { margin-bottom: var(--spacing-md); }
+
+a {
+  color: var(--color-primary);
+  text-decoration: none;
+  transition: color var(--transition);
+}
+a:hover { color: var(--color-primary-dark); }
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+ul, ol { padding-left: var(--spacing-lg); }
+li { margin-bottom: var(--spacing-xs); }
+
+address { font-style: normal; }
+
+/* === Доступність: видимий фокус (a11y) === */
+:focus-visible {
+  outline: 3px solid var(--color-primary);
+  outline-offset: 3px;
+  border-radius: var(--border-radius-sm);
+}
+
+/* === Контейнер === */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--spacing-lg);
+}
+
+/* === Кнопки === */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  padding: 12px var(--spacing-lg);
+  border-radius: var(--border-radius);
+  font-family: var(--font-main);
+  font-size: var(--font-size-md);
+  font-weight: 600;
+  cursor: pointer;
+  border: 2px solid transparent;
+  transition: background-color var(--transition), color var(--transition),
+              box-shadow var(--transition), transform var(--transition);
+  text-decoration: none;
+}
+
+.btn:hover { transform: translateY(-2px); box-shadow: var(--shadow); }
+.btn:active { transform: translateY(0); }
+
+.btn-primary {
+  background-color: var(--color-primary);
+  color: #fff;
+  border-color: var(--color-primary);
+}
+.btn-primary:hover {
+  background-color: var(--color-primary-dark);
+  border-color: var(--color-primary-dark);
+  color: #fff;
+}
+
+.btn-outline {
+  background-color: transparent;
+  color: var(--color-primary);
+  border-color: var(--color-primary);
+}
+.btn-outline:hover {
+  background-color: var(--color-primary);
+  color: #fff;
+}
+
+/* === Сітка карток === */
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: var(--spacing-lg);
+}
+
+/* === Картка === */
+.card {
+  background: var(--color-bg-alt);
+  border-radius: var(--border-radius-lg);
+  box-shadow: var(--shadow-sm);
+  overflow: hidden;
+  transition: box-shadow var(--transition), transform var(--transition);
+}
+.card:hover {
+  box-shadow: var(--shadow-lg);
+  transform: translateY(-4px);
+}
+.card-body { padding: var(--spacing-lg); }
+.card-title { font-family: var(--font-display); color: var(--color-secondary); margin-bottom: var(--spacing-sm); }
+.card-text { color: var(--color-text-muted); font-size: var(--font-size-sm); }
+
+/* === Бейдж === */
+.badge {
+  display: inline-block;
+  padding: 3px 10px;
+  border-radius: 100px;
+  font-size: var(--font-size-xs);
+  font-weight: 600;
+  background: rgba(13,148,136,0.12);
+  color: var(--color-primary-dark);
+}
+
+/* === Секція === */
+.section {
+  padding: var(--spacing-xl) 0;
+}
+.section-title {
+  font-size: 2rem;
+  color: var(--color-secondary);
+  margin-bottom: var(--spacing-xs);
+}
+.section-subtitle {
+  color: var(--color-text-muted);
+  font-size: var(--font-size-lg);
+  margin-bottom: var(--spacing-lg);
+}
+
+/* === Декоративний роздільник === */
+.divider {
+  width: 60px;
+  height: 4px;
+  background: var(--color-primary);
+  border-radius: 2px;
+  margin-bottom: var(--spacing-lg);
+}
+
+/* === Утиліти === */
+.text-center { text-align: center; }
+.text-muted   { color: var(--color-text-muted); }
+.mt-lg        { margin-top: var(--spacing-lg); }
+.mb-lg        { margin-bottom: var(--spacing-lg); }
+
+/* === Повідомлення === */
+.alert {
+  padding: var(--spacing-md) var(--spacing-lg);
+  border-radius: var(--border-radius);
+  font-size: var(--font-size-sm);
+  display: none;
+  margin-top: var(--spacing-md);
+}
+.alert-success {
+  background: var(--color-success-bg);
+  color: #166534;
+  border: 1px solid #bbf7d0;
+}
+.alert-error {
+  background: var(--color-error-bg);
+  color: #991b1b;
+  border: 1px solid #fecaca;
+}
+.alert.show { display: flex; align-items: center; gap: var(--spacing-sm); }
+
+/* === Адаптивність === */
+@media (max-width: 768px) {
+  .container { padding: 0 var(--spacing-md); }
+  h1 { font-size: 2rem; }
+  h2 { font-size: 1.5rem; }
+  .cards-grid { grid-template-columns: 1fr; }
+  .section { padding: var(--spacing-lg) 0; }
+}

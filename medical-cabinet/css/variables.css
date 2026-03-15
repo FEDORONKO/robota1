@@ -1,0 +1,57 @@
+/* ===================================================
+   variables.css — Глобальні CSS-змінні медичної теми
+   Практична робота №1 — Семантика, доступність, форми
+   =================================================== */
+
+:root {
+  /* === Кольори бренду === */
+  --color-bg:          #f0f7f6;
+  --color-bg-alt:      #ffffff;
+  --color-text:        #1a2e2b;
+  --color-text-muted:  #5a7a76;
+
+  --color-primary:     #0d9488;
+  --color-primary-dark:#0a7a6e;
+  --color-secondary:   #134e4a;
+  --color-accent:      #f59e0b;
+
+  /* === Стани форм === */
+  --color-error:       #ef4444;
+  --color-error-bg:    #fef2f2;
+  --color-success:     #22c55e;
+  --color-success-bg:  #f0fdf4;
+  --color-warning:     #f59e0b;
+
+  /* === Типографіка === */
+  --font-main:    'DM Sans', 'Segoe UI', sans-serif;
+  --font-display: 'Playfair Display', Georgia, serif;
+  --font-mono:    'Fira Code', 'Courier New', monospace;
+
+  --font-size-xs:  12px;
+  --font-size-sm:  14px;
+  --font-size-md:  16px;
+  --font-size-lg:  20px;
+  --font-size-xl:  28px;
+  --font-size-2xl: 40px;
+
+  /* === Відступи === */
+  --spacing-xs:  4px;
+  --spacing-sm:  8px;
+  --spacing-md:  16px;
+  --spacing-lg:  32px;
+  --spacing-xl:  64px;
+
+  /* === Форма та тіні === */
+  --border-radius-sm:  6px;
+  --border-radius:     12px;
+  --border-radius-lg:  20px;
+  --border-radius-xl:  32px;
+
+  --shadow-sm:  0 1px 4px rgba(13,148,136,0.08);
+  --shadow:     0 4px 16px rgba(13,148,136,0.12);
+  --shadow-lg:  0 8px 32px rgba(13,148,136,0.18);
+
+  /* === Переходи === */
+  --transition: 0.25s ease;
+  --transition-slow: 0.45s ease;
+}
